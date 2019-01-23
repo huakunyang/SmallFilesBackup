@@ -26,10 +26,10 @@ put "FileStoreClient" and "client.conf" in the client in same folder, edit the "
 
 run client by typing "./FileStoreClient" in shell
 
-# Multiple Client Vs One Server
+# Multiple Clients vs One Server
 Server is designed with Multi-thread, which means that one server can work with multi-clients, if the configuration is correctly filled with ip and port
 
-# Doc
+# doc
 The folder contains the simple design doc
 
 # src and include
