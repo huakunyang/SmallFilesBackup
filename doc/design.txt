@@ -1,0 +1,41 @@
+Simple design text file for the program
+History:
+<author>        <time>       <version>       <description>
+Huakun.yang    2019,Jan,22   1.0            Initial Creation
+------------------------------------------------------------------------------------------------
+
+To send files from clients to server for backup, the data flow between client and server is as follows, 
+please note that the server is multi-thread, which can accpet files from multi clients
+
+          Client                                                                             Server 
+            |                                                                                   |
+        Init phase, search the files                                                 Init phase, search the files
+        in the folder, consolidate                                                     in the folder, consolidate
+        the files info(md5 sum                                                         the files info(md5 sum 
+        and file name) into queue                                                     and file name) into queue                                              
+            |                                                                                   |
+            |  ---for each file in list, send file name, file conent md5 sum  --------------->  |
+            |                                                                                   |
+            |                                                                        check whether the file
+            |                                                                        in server by compare 
+            |                                                                        file name and md5 sum               
+            |                                                                                   |
+            |  <------------- status on the file in server or not-----------------------------  |         
+            |                                                                                   |
+            |  ---------------if the file not exist in server, send file contents-------------> |
+            |                                                                                   |
+            |                                                                          calculate the md5 sum of
+            |                                                                           file contents and compare
+            |                                                                          with the one in file info,
+            |                                                                           if the md5 sum match, the file
+            |                                                                           contents is received successfully
+            |                                                                           create the file and send back result
+            |                                                                                   |         
+            | <------------------send the file write confirmation status -----------------------|
+            |                                                                                   |    
+            |                                                                                   |
+        if new files are created                                                                |
+        in the folder, add the files                                                            |   
+        info (file name and md5 sum)                                                            |
+        into the list and repeat                                                                |
+        above process
