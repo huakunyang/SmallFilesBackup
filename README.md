@@ -1,5 +1,5 @@
 # SmallFilesBackup
-This program contains the client and server for small files transfer to client for backup. 
+This program contains the client and server for small files transfer to server for backup. 
 
 # please note that THIS PROGRAM CAN ONLY RUN ON LINUX system. 
 
