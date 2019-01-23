@@ -2,10 +2,10 @@
 This program contains the client and server for small files transfer to client for backup. 
 PLEASE NOTE THAT THIS PROGRAM CAN ONLY RUN LINUX SYSTEM. 
 
-#How to build
+# How to build
 Just type "make" in the top folder, the Makefile contains the build information which will be read by make
 
-#How to use it
+# How to use it
 Upon make finish building, in the bin folder, there will be the following 4 files:
 - FileStoreClient: the client program
 - client.conf:     the config file for client
@@ -25,11 +25,11 @@ put "FileStoreClient" and "client.conf" in the client, edit the "client.conf" fo
 
 run client by typing "./FileStoreClient" in shell
 
-#Multiple Client Vs One Server
+# Multiple Client Vs One Server
 Server is designed with Multi-thread, which means that one server can work with multi-clients, if the configuration is correctly filled with ip and port
 
-#Doc
+# Doc
 The folder contains the simple design doc
 
-#src and include
+# src and include
 The code for the server and client program
